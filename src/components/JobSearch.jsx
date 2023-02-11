@@ -19,16 +19,19 @@ const JobSearch = (props) => {
         onChange={(e) => setLoc(e.target.value)}
         value={loc}
       />
-      <div className="flex gap-2 self-center">
+<div className="flex gap-2 self-center items-center">
+  <input
+    checked={fullTime}
+    onChange={(e) => setFullTime(e.target.checked)}
+    name="fulltime"
+    type="checkbox"
+    className="self-center"
+  />
+  <label htmlFor="fulltime" className="self-center font-semibold text-gray-700">
+    Full-time
+  </label>
+</div>
 
-      <input checked={fullTime} onChange={(e) => setFullTime(e.target.checked)} name="fulltime" type="checkbox" className="self-center" />
-      <label
-        htmlFor="fulltime"
-        className="self-center font-semibold text-gray-700"
-        >
-        Full-time
-      </label>
-        </div>
       <button
         type="submit"
         className="self-center whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-teal-600 to-sky-600 hover:from-teal-700 hover:to-sky-700 w-full md:w-min"

@@ -1,3 +1,10 @@
+let cachedToken = null;
+
 export function getToken() {
-  return localStorage.getItem('jwt');
+  if (cachedToken) {
+    return cachedToken;
+  }
+
+  cachedToken = localStorage.getItem("jwt");
+  return cachedToken;
 }

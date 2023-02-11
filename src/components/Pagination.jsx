@@ -10,8 +10,6 @@ const Pagination = ({
     pages.push(i);
   }
 
-  console.log(totalData);
-
   return (
     <div className="flex">
       <button
@@ -54,7 +52,6 @@ const Pagination = ({
             ? setCurrentPage(currentPage + 1)
             : null
         }
-        // onClick={() => console.log(pages)}
         className="group relative flex w-full justify-center rounded-md border-2 border-gray-200 py-2 px-2 text-sm font-medium text-gray-800 hover:bg-gray-200"
       >
         <svg

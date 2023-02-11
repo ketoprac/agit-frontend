@@ -5,10 +5,7 @@ const JobCard = ({ item }) => {
 
   return (
     <Link to={`/jobs/${id}`}>
-      <div
-        key={id}
-        className="flex flex-col justify-between border shadow-md h-52 w-96 p-6 hover:shadow-lg transition-shadow cursor-pointer"
-      >
+      <div className="flex flex-col justify-between border shadow-md h-52 w-96 p-6 hover:shadow-lg transition-shadow cursor-pointer">
         <div className="flex justify-start items-center">
           <div className="w-32 flex justify-center items-center">
             <img
@@ -26,12 +23,8 @@ const JobCard = ({ item }) => {
         </div>
         <div className="flex items-end justify-between">
           <div className="flex flex-col gap-1">
-            <div className="flex items-center gap-1">
-              <p className="font-medium text-sm">{location}</p>
-            </div>
-            <div className="flex items-center gap-1">
-              <p className="font-medium text-sm">{type}</p>
-            </div>
+            <p className="font-medium text-sm">{location}</p>
+            <p className="font-medium text-sm">{type}</p>
           </div>
         </div>
       </div>

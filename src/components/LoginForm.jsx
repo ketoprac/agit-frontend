@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { isAuthenticated } from "../utils/isAuthenticated";
 
 const LoginForm = () => {
@@ -11,7 +12,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const res = await axios.post("http://localhost:8080/api/users/login", {
         email,
@@ -19,9 +20,10 @@ const LoginForm = () => {
       });
       const data = res.data.token;
       localStorage.setItem("jwt", data);
-      alert("Login success");
       window.location.reload();
+      toast.success('Login success');
     } catch (err) {
+      toast.error("Oops, something went wrong!");
       setErrorMsg(err.message);
     }
   };
@@ -30,7 +32,7 @@ const LoginForm = () => {
     if (isAuthenticated()) {
       navigate("/jobs");
     }
-  }, [isAuthenticated]);
+  }, []);
 
   return (
     <div>

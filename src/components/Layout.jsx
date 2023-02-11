@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Layout = ({ children }) => {
+  const navigate = useNavigate();
+
   const onLogout = () => {
     localStorage.removeItem("jwt");
-    window.location.reload();
-  }
+    toast.success('Logout success');
+    navigate("/", { replace: true });
+  };
 
   return (
     <div>
